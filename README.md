@@ -79,3 +79,8 @@ Oyun ekranı altyapısı hazır (içerik henüz eklenmedi)
 
 ### Lisans
 Bu proje sadece eğitim ve demo amaçlı hazırlanmıştır.
+
+## İndir
+
+[Beta APK'yı indir](https://github.com/alpbeygithub/dunya-kasifi/releases/tag/v0.1.0)
+
