@@ -33,21 +33,37 @@ flutter pub get
 
 ### PROJE YAPISI
 lib/
+
 ├── core/
+
 │   └── theme.dart                      # Tema ayarları
+
 ├── features/
+
 │   ├── auth/                           # Giriş ekranı
+
 │   │   ├── models/user_model.dart
+
 │   │   ├── screens/login_screen.dart
+
 │   │   ├── screens/splash_screen.dart
+
 │   │   └── widgets/login_form.dart
+
 │   ├── explorer/                       # Kaşif (avatar) seçimi
+
 │   │   ├── models/explorer_model.dart
+
 │   │   ├── screens/select_explorer_screen.dart
+
 │   │   └── widgets/explorer_card.dart
+
 │   └── game/                           # Oyun seçim ekranı (placeholder)
+
 │       └── screens/select_game_screen.dart
+
 ├── login.dart                          # Route yapılandırmaları
+
 └── main.dart                           # Uygulama başlangıç noktası
 
 ### Özellikler
