@@ -1,16 +1,65 @@
-# login_app
+# Dünya Kaşifi
 
-A new Flutter project.
+**Dünya Kaşifi**, 6-12 yaş arası çocuklara yönelik, uçak içi artırılmış gerçeklik tabanlı bir mobil oyundur. Uygulama şu an erken beta aşamasındadır ve temel olarak kullanıcı girişi ile avatar (kaşif) seçimi sunmaktadır.
 
-## Getting Started
+## Kurulum (Setup)
 
-This project is a starting point for a Flutter application.
+Aşağıdaki adımları takip ederek projeyi kendi bilgisayarınızda çalıştırabilirsiniz:
 
-A few resources to get you started if this is your first Flutter project:
+### Gereksinimler
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+- Flutter SDK (3.7.2 veya üzeri)
+- Android Studio (veya başka bir IDE)
+- Android Emulator (veya gerçek cihaz)
+- Git (yüklü olmalı)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### 1. Flutter SDK'yı yükleyin
+
+Flutter kurulumu için resmi rehber:  
+https://docs.flutter.dev/get-started/install
+
+### 2. Bu projeyi klonlayın
+
+
+git clone https://github.com/alpbeygithub/dunya-kasifi.git
+cd dunya-kasifi
+
+### 3. Gerekli paketleri yükleyin
+flutter pub get
+
+### 4. Emülatörü başlatın (veya cihazı bağlayın)
+
+### 5. Uygulamayı çalıştırın
+
+### PROJE YAPISI
+lib/
+├── core/
+│   └── theme.dart                      # Tema ayarları
+├── features/
+│   ├── auth/                           # Giriş ekranı
+│   │   ├── models/user_model.dart
+│   │   ├── screens/login_screen.dart
+│   │   ├── screens/splash_screen.dart
+│   │   └── widgets/login_form.dart
+│   ├── explorer/                       # Kaşif (avatar) seçimi
+│   │   ├── models/explorer_model.dart
+│   │   ├── screens/select_explorer_screen.dart
+│   │   └── widgets/explorer_card.dart
+│   └── game/                           # Oyun seçim ekranı (placeholder)
+│       └── screens/select_game_screen.dart
+├── login.dart                          # Route yapılandırmaları
+└── main.dart                           # Uygulama başlangıç noktası
+
+### Özellikler
+THY logolu giriş ekranı
+
+Koltuk numarası ve kaşif adı ile giriş
+
+4 farklı kaşif kartı ile avatar seçimi
+
+Responsive ve modüler yapı
+
+Oyun ekranı altyapısı hazır (içerik henüz eklenmedi)
+
+### Lisans
+Bu proje sadece eğitim ve demo amaçlı hazırlanmıştır.
