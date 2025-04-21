@@ -4,7 +4,11 @@
 
 ## Kurulum (Setup)
 
-Aşağıdaki adımları takip ederek projeyi kendi bilgisayarınızda çalıştırabilirsiniz:
+Dilerseniz en alttan son apk versiyonunu telefonunuza indirip çalıştırabilir.
+
+Veya
+
+Aşağıdaki adımları takip ederek projeyi kendi bilgisayarınızda bir emülatör ile çalıştırabilirsiniz:
 
 ### Gereksinimler
 
