@@ -7,36 +7,38 @@ class LoginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFFE0F7FA), // Açık mavi arka plan
+      resizeToAvoidBottomInset: true,
       body: Stack(
         children: [
-          Center(
+          // Sky gradient background
+          Container(
+            decoration: const BoxDecoration(
+              gradient: LinearGradient(
+                colors: [Color(0xFFE0F7FA), Color(0xFFB2EBF2)],
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
+              ),
+            ),
+          ),
+          const Padding(
+            padding: EdgeInsets.all(20.0),
             child: SingleChildScrollView(
-              padding: const EdgeInsets.symmetric(horizontal: 24.0),
               child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: const [
-                  Text(
-                    'Giriş Yap',
-                    style: TextStyle(
-                      fontSize: 32,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.black87,
-                    ),
-                  ),
-                  SizedBox(height: 32),
+                children: [
+                  SizedBox(height: 60),
                   LoginForm(),
                 ],
               ),
             ),
           ),
+          // THY logo bottom right
           Positioned(
-            right: 16,
             bottom: 16,
+            right: 16,
             child: Image.asset(
               'assets/images/thy_logo.png',
-              width: 64,
-              height: 64,
+              width: 48,
+              height: 48,
             ),
           ),
         ],
