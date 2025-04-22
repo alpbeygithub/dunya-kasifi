@@ -2,13 +2,11 @@ import 'package:flutter/material.dart';
 
 class ExplorerCard extends StatelessWidget {
   final String name;
-  final String emoji;
   final VoidCallback onTap;
 
   const ExplorerCard({
     super.key,
     required this.name,
-    required this.emoji,
     required this.onTap,
   });
 
@@ -30,16 +28,10 @@ class ExplorerCard extends StatelessWidget {
           ],
         ),
         child: Center(
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Text(emoji, style: const TextStyle(fontSize: 36)),
-              const SizedBox(height: 8),
-              Text(
-                name,
-                style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-              ),
-            ],
+          child: Text(
+            name,
+            style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+            textAlign: TextAlign.center,
           ),
         ),
       ),

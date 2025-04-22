@@ -1,114 +1,106 @@
 import 'package:flutter/material.dart';
 
 class LoginForm extends StatefulWidget {
-  const LoginForm({super.key});
+  final void Function(String name, String seatLetter, String seatNumber) onSubmit;
+
+  const LoginForm({super.key, required this.onSubmit});
 
   @override
   State<LoginForm> createState() => _LoginFormState();
 }
 
 class _LoginFormState extends State<LoginForm> {
-  final TextEditingController nameController = TextEditingController();
-  String selectedSeatLetter = 'A';
-  int selectedSeatNumber = 1;
+  final TextEditingController _nameController = TextEditingController();
+  String? selectedSeatLetter;
+  String? selectedSeatNumber;
+  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
   final List<String> seatLetters = ['A', 'B', 'C', 'D', 'E', 'F'];
+  final List<String> seatNumbers = List.generate(30, (index) => (index + 1).toString());
+
+  void _submitForm() {
+    if (_nameController.text.isEmpty || selectedSeatLetter == null || selectedSeatNumber == null) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: const Text('Lütfen tüm alanları doldurun'),
+          backgroundColor: Colors.redAccent,
+        ),
+      );
+      return;
+    }
+
+    widget.onSubmit(
+      _nameController.text,
+      selectedSeatLetter!,
+      selectedSeatNumber!,
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Text(
-          'Maceracıyı Tanıyalım',
-          style: TextStyle(
-            fontSize: 22,
-            fontWeight: FontWeight.bold,
-            color: Colors.blue.shade900,
+    return Form(
+      key: _formKey,
+      child: Column(
+        children: [
+          TextField(
+            controller: _nameController,
+            decoration: const InputDecoration(
+              labelText: 'Kaşifin Adı Soyadı',
+              border: OutlineInputBorder(),
+            ),
           ),
-        ),
-        const SizedBox(height: 24),
-        TextField(
-          controller: nameController,
-          decoration: const InputDecoration(
-            labelText: 'Kaşifin Adı Soyadı',
-            border: OutlineInputBorder(),
+          const SizedBox(height: 20),
+          const Align(
+            alignment: Alignment.centerLeft,
+            child: Text("Koltuk Harfi", style: TextStyle(fontWeight: FontWeight.bold)),
           ),
-        ),
-        const SizedBox(height: 24),
-        Align(
-          alignment: Alignment.centerLeft,
-          child: Text(
-            'Koltuk Harfi',
-            style: TextStyle(color: Colors.blue.shade900),
-          ),
-        ),
-        const SizedBox(height: 8),
-        SingleChildScrollView(
-          scrollDirection: Axis.horizontal,
-          child: Row(
+          const SizedBox(height: 8),
+          Wrap(
+            spacing: 8,
             children: seatLetters.map((letter) {
               final isSelected = selectedSeatLetter == letter;
-              return Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 4.0),
-                child: ChoiceChip(
-                  label: Text(letter),
-                  selected: isSelected,
-                  onSelected: (_) {
-                    setState(() {
-                      selectedSeatLetter = letter;
-                    });
-                  },
-                  selectedColor: Colors.redAccent,
-                  backgroundColor: Colors.white,
-                  labelStyle: TextStyle(
-                    color: isSelected ? Colors.white : Colors.black,
-                  ),
-                ),
+              return ChoiceChip(
+                label: Text(letter),
+                selected: isSelected,
+                selectedColor: Colors.redAccent,
+                onSelected: (_) {
+                  setState(() {
+                    selectedSeatLetter = letter;
+                  });
+                },
               );
             }).toList(),
           ),
-        ),
-        const SizedBox(height: 24),
-        DropdownButtonFormField<int>(
-          value: selectedSeatNumber,
-          decoration: const InputDecoration(
-            labelText: 'Kaşifin Koltuk Numarası',
-            border: OutlineInputBorder(),
-          ),
-          items: List.generate(40, (index) {
-            final seat = index + 1;
-            return DropdownMenuItem(
-              value: seat,
-              child: Text(seat.toString()),
-            );
-          }),
-          onChanged: (value) {
-            if (value != null) {
+          const SizedBox(height: 20),
+          DropdownButtonFormField<String>(
+            decoration: const InputDecoration(
+              labelText: "Kaşifin Koltuk Numarası",
+              border: OutlineInputBorder(),
+            ),
+            value: selectedSeatNumber,
+            items: seatNumbers
+                .map((number) => DropdownMenuItem(value: number, child: Text(number)))
+                .toList(),
+            onChanged: (value) {
               setState(() {
                 selectedSeatNumber = value;
               });
-            }
-          },
-        ),
-        const SizedBox(height: 32),
-        ElevatedButton(
-          onPressed: () {
-            Navigator.pushNamed(context, '/select-explorer');
-          },
-
-          style: ElevatedButton.styleFrom(
-            backgroundColor: Colors.redAccent,
-            padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 16),
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(30),
+            },
+          ),
+          const SizedBox(height: 30),
+          ElevatedButton(
+            onPressed: _submitForm,
+            style: ElevatedButton.styleFrom(
+              backgroundColor: Colors.redAccent,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(20),
+              ),
+              padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 12),
             ),
+            child: const Text("Macera Başlat", style: TextStyle(color: Colors.white)),
           ),
-          child: const Text(
-            'Macera Başlat',
-            style: TextStyle(fontSize: 16, color: Colors.white),
-          ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }

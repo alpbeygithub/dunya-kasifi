@@ -7,7 +7,7 @@ class SelectExplorerScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFFFDF7FF),
+      backgroundColor: const Color(0xFFD0ECF8), // Gökyüzü teması
       body: SafeArea(
         child: Center(
           child: Column(
@@ -18,6 +18,7 @@ class SelectExplorerScreen extends StatelessWidget {
                 style: TextStyle(
                   fontSize: 28,
                   fontWeight: FontWeight.bold,
+                  color: Colors.blueAccent,
                 ),
               ),
               const SizedBox(height: 10),
@@ -38,22 +39,18 @@ class SelectExplorerScreen extends StatelessWidget {
                   children: [
                     ExplorerCard(
                       name: 'Kaşif 1',
-                      emoji: '🧭',
                       onTap: () => Navigator.pushNamed(context, '/select-game'),
                     ),
                     ExplorerCard(
                       name: 'Kaşif 2',
-                      emoji: '🦸‍♀️',
                       onTap: () => Navigator.pushNamed(context, '/select-game'),
                     ),
                     ExplorerCard(
                       name: 'Kaşif 3',
-                      emoji: '🚀',
                       onTap: () => Navigator.pushNamed(context, '/select-game'),
                     ),
                     ExplorerCard(
                       name: 'Kaşif 4',
-                      emoji: '🌍',
                       onTap: () => Navigator.pushNamed(context, '/select-game'),
                     ),
                   ],
