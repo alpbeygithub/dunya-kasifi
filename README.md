@@ -83,6 +83,15 @@ Oyun ekranı altyapısı hazır (içerik henüz eklenmedi)
 
 ### Lisans
 Bu proje sadece eğitim ve demo amaçlı hazırlanmıştır.
+---
+
+### Güncellemeler v1.0.2 
+
+- [x] Kaşif Seç ekranı arka planı gökyüzü temasına uyarlandı
+- [x] Emojiler geçici olarak kaldırıldı
+- [x] Splash → Login → Kaşif Seç → Oyun ekranı sırası düzeltildi
+- [x] Form validasyonu eklendi: ad-soyad ve koltuk seçimleri zorunlu hale getirildi
+- [x] THY logosu responsive şekilde tüm ekranlara sabitlendi
 
 ### Son Versiyon APK İndir
 
