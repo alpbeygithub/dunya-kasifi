@@ -84,11 +84,18 @@ Oyun ekranı altyapısı hazır (içerik henüz eklenmedi)
 ### Lisans
 Bu proje sadece eğitim ve demo amaçlı hazırlanmıştır.
 ---
-### Sunum Dosyası
+## 🎬 Tanıtım Videosu
 
-[Dünya Kaşifi Sunumunu İndir (PDF)](https://github.com/alpbeygithub/dunya-kasifi/raw/main/D%C3%BCnya%20Ka%C5%9Fifi_compressed.pdf)
+📺 [Dünya Kaşifi - Tanıtım Videosunu İzle](https://youtu.be/6RNHhcFYvpQ)
+
+---
+
+## 📄 Sunum Dosyası
+
+📥 [Dünya Kaşifi Sunumunu İndir (PDF)](https://github.com/alpbeygithub/dunya-kasifi/raw/main/D%C3%BCnya%20Ka%C5%9Fifi_compressed.pdf)
 
 📌 Not: Görsellerin tam görünmesi için PDF'i bilgisayarınıza indirerek açmanız önerilir.
+
 
 
 
