@@ -86,7 +86,8 @@ Bu proje sadece eğitim ve demo amaçlı hazırlanmıştır.
 ---
 ### Sunum Pdf
 
-📄 [Sunum Dosyasını Görüntüle](./Dünya%Kaşifi_compressed.pdf)
+📄 [Sunum Dosyasını Görüntüle](./Dünya%20Kaşifi_compressed.pdf)
+
 
 
 ### Güncellemeler v1.0.2 
